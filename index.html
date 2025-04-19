@@ -1,0 +1,697 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solid - Tailwind CSS Saas Template</title>
+  <link rel="icon" href="images/logo.svg"><link href="css/style.css" rel="stylesheet"></head>
+  <body x-data="{ page: 'home', 'loaded': true, 'darkMode': true, 'stickyMenu': false, 'navigationOpen': false, 'scrollTop': false }" x-init="
+         darkMode = JSON.parse(localStorage.getItem('darkMode'));
+         $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(value)))" :class="{'a tf': darkMode === true}">
+    <!-- ===== Preloader Start ===== -->
+    <div x-show="loaded" x-init="window.addEventListener('DOMContentLoaded', () => {setTimeout(() => loaded = false, 500)})" class="f l i z mc qb ee ge id uf">
+  <div class="sc xb xe xd if mf qf sf"></div>
+</div>
+    <!-- ===== Preloader End ===== -->
+
+    <!-- ===== Bg Lines Start ===== -->
+    <div class="f i l -ud-z-10 qb hc rc ee ie">
+  <span class="hd hc dg wl qb ud"></span>
+  <span class="hd hc dg wl qb vd"></span>
+  <span class="hd hc dg wl qb wd"></span>
+</div>
+
+    <!-- ===== Bg Lines End ===== -->
+
+    <!-- ===== Header Start ===== -->
+    <header class="f l i rc y ph" :class="{ 'uf tl xj qh zj fk' : stickyMenu }" @scroll.window="stickyMenu = (window.pageYOffset > 20) ? true : false">
+  <div class="ba md _g nn 2xl:ud-px-0 do ee he h">
+    <div class="rc ko/4 qb ee he">
+      <a href="index.html">
+        <img class="nl" src="images/logo-light.svg" alt="Logo Light" style="height: 40px;">
+        <img class="ub ml" src="images/logo-dark.svg" alt="Logo Dark" style="height: 40px;">
+      </a>
+      
+      <!-- Hamburger Toggle BTN -->
+      <button class="eo ob" @click="navigationOpen = !navigationOpen">
+        <span class="ob h yd dd gc">
+          <span class="ob g rc hc">
+            <span class="ob h i l tf ul df ed ic da hk gk _j" :class="{ 'fd ak': !navigationOpen }"></span>
+            <span class="ob h i l tf ul df ed ic da hk gk bk" :class="{ 'fd pr': !navigationOpen }"></span>
+            <span class="ob h i l tf ul df ed ic da hk gk ck" :class="{ 'fd dk': !navigationOpen }"></span>
+          </span>
+          <span class="ob g rc hc td">
+            <span class="ob tf ul df hk gk ak g r i gd hc" :class="{ 'jc _j': !navigationOpen }"></span>
+            <span class="ob tf ul df hk gk pr g l top-2.5 rc ic" :class="{ 'jc ck': !navigationOpen }"></span>
+          </span>
+        </span>
+      </button>
+      <!-- Hamburger Toggle BTN -->
+    </div>
+    <div class="rc lg:w-3/4 jc fo e un do ee he" :class="{ 'd uf sl sj kc oc we _e lb ug': navigationOpen }">
+      <nav>
+
+      </nav>
+
+      <div class="qb ee se ka bo">
+        <div class="mb g vn top-1 t" :class="navigationOpen ? 'd' : 'd'">
+          <label class="ob m-0 h">
+            <input type="checkbox" :value="darkMode" @change="darkMode = !darkMode" class="yd rc hc lj g i x aa">
+            <img class="nl" src="images/icon-sun.svg" alt="Sun">
+            <img class="ub ml" src="images/icon-moon.svg" alt="Moon">
+          </label>
+        </div>
+        <a href="#" class="qb ee ge wf zk hk ek fj wi xe bh dh" style="background: linear-gradient(to right, #ff416c, #ff4b2b); color: white;">Подать заявку</a>
+
+      </div>
+    </div>
+  </div>
+</header>
+
+    <!-- ===== Header End ===== -->
+
+    <main>
+      <!-- ===== Hero Start ===== -->
+      <section id="#home" class="th rn dr uh er ve">
+        <div class="ba md _g nn 2xl:ud-px-0">
+          <div class="qb ro to gq">
+            <div class="animate_left vm/2">
+              <h4 class="ej dm oi bj ra">🚀 Почему стоит выбрать Extra University?</h4>
+              <h1 class="ej dm ri jr cj ga">
+                Там, где идеи превращаются в
+                <span class="pb h ik jk kk pk nk sk im before:-ud-z-1">стартапы</span>
+              </h1>
+              <p>Практико‑ориентированное обучение с первого дня в наших современных IT и AI лабораториях, расположенных в спокойной обстановке всего в 100 км от Алматы.</p>
+      
+              <div class="ma">
+                <form action="https://formbold.com/s/unique_form_id" method="POST">
+                  <div class="qb de qe">
+                    <input type="text" placeholder="Введите адрес электронной почты" class="tl hf nf pl pj gm xe hl fl pm bh xg">
+                    <button class="qb tf xk rl fj xe hk ek dh bh mm">Подать заявку</button>
+                  </div>
+                </form>
+      
+                <p class="ej dm ta">Доступны стипендии для студентов из сельской местности</p>
+              </div>
+            </div>
+            <div class="animate_right vm/2 ub co">
+              <div class="h 2xl:-ud-mr-7.5">
+                <img src="images/shape-01.png" alt="декоративная фигура" class="g -ud-left-11.5 i">
+                <img src="images/shape-02.svg" alt="декоративная фигура" class="g j k">
+                <img src="images/shape-03.svg" alt="декоративная фигура" class="g -ud-right-6.5 k">
+                <div>
+                  <img class="nl qj" src="images/hero-light.png" alt="Кампус">
+                  <img class="ub ml qj" src="images/hero-dark.png" alt="Кампус">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- ===== Hero End ===== -->
+    
+      <!-- ===== Clients Start ===== -->
+      <section class="vf tl hf jf rf ql fh">
+        <div class="ba md _g nn 2xl:ud-px-0">
+          <div class="tb ae cn le uo iq ge ee">
+            <a href="#" class="animate_top ob">
+              <img class="ij yj ek dl nl" src="images/brand-light-01.png" alt="Clients">
+              <img class="ub jj yj ek dl ml" src="images/brand-light-01.png" alt="Clients">
+            </a>
+            <a href="#" class="animate_top ob">
+              <img class="ij yj ek dl nl" src="images/brand-light-02.png" alt="Clients">
+              <img class="ub jj yj ek dl ml" src="images/brand-light-02.png" alt="Clients">
+            </a>
+            <a href="#" class="ob animate_top">
+              <img class="ij yj ek dl nl" src="images/brand-light-03.png" alt="Clients">
+              <img class="ub jj yj ek dl ml" src="images/brand-light-03.png" alt="Clients">
+            </a>
+            <a href="#" class="ob animate_top">
+              <img class="ij yj ek dl nl" src="images/brand-light-04.png" alt="Clients">
+              <img class="ub jj yj ek dl ml" src="images/brand-light-04.png" alt="Clients">
+            </a>
+            <a href="#" class="animate_top ob">
+              <img class="ij yj ek dl nl" src="images/brand-light-01.png" alt="Clients">
+              <img class="ub jj yj ek dl ml" src="images/brand-light-01.png" alt="Clients">
+            </a>
+            <a href="#" class="animate_top ob">
+              <img class="ij yj ek dl nl" src="images/brand-light-02.png" alt="Clients">
+              <img class="ub jj yj ek dl ml" src="images/brand-light-02.png" alt="Clients">
+            </a>
+          </div>
+        </div>
+      </section>
+      <!-- ===== Clients End ===== -->
+    
+      <!-- ===== Features Start ===== -->
+      <section id="features" class="zg ep oq">
+        <div class="ba nd _g nn pq">
+          <!-- Section Title Start -->
+          <div class="animate_top mi ba" x-data="{ sectionTitle: `НАШИ ПРЕИМУЩЕСТВА`, sectionSubtitle: `Что делает нас особенными`, sectionTitlePara: `Extra University сочетает международные стандарты с практическим обучением в бизнесе и технологиях.`}">
+            <div class="eg sl ol pl pb xe oh hh sa">
+              <h4 x-text="sectionTitle" class="bj yi ej dm"></h4>
+            </div>
+            <h2 x-text="sectionSubtitle" class="cj ri nr ej dm ym/5 zp/2 ba sa"></h2>
+            <p class="ba ym/5 mo/5 aq" x-text="sectionTitlePara"></p>
+          </div>
+          <!-- Section Title End -->
+      
+          <div class="tb _d bn oo le eq ua xn vp">
+            <!-- Features item Start -->
+            <div class="animate_top hf of rj ye ug lq yj el km pl sl">
+              <div class="qb ee ge ze wf sc xb">
+                <img src="images/icon-01.svg" alt="Иконка">
+              </div>
+              <h3 class="aj qi kr ej dm ia ga">Практическое обучение</h3>
+              <p>Реальные проекты и сотрудничество со стартапами с первого дня.</p>
+            </div>
+            <!-- Features item End -->
+      
+            <!-- Features item Start -->
+            <div class="animate_top hf of rj ye ug lq yj el km pl sl">
+              <div class="qb ee ge ze wf sc xb">
+                <img src="images/icon-02.svg" alt="Иконка">
+              </div>
+              <h3 class="aj qi kr ej dm ia ga">Территория кампуса</h3>
+              <p>Спокойная территория 172 300 м² недалеко от Алматы для сосредоточенной учебы.</p>
+            </div>
+            <!-- Features item End -->
+      
+            <!-- Features item Start -->
+            <div class="animate_top hf of rj ye ug lq yj el km pl sl">
+              <div class="qb ee ge ze wf sc xb">
+                <img src="images/icon-03.svg" alt="Иконка">
+              </div>
+              <h3 class="aj qi kr ej dm ia ga">Партнерства с индустрией</h3>
+              <p>Сильные партнерские отношения с лидерами технологического сектора и инвесторами.</p>
+            </div>
+            <!-- Features item End -->
+          </div>
+        </div>
+      </section>
+      <!-- ===== Features End ===== -->
+    
+      <!-- ===== About Start ===== -->
+      <section class="uh pp cr ve">
+        <div class="ba od _g nn pq">
+          <div class="qb ee te wo">
+            <div class="animate_left ub sm vm/2">
+              <img src="images/about-light-01.png" alt="О нас" class="nl">
+              <img src="images/about-dark-01.png" alt="О нас" class="ub ml">
+            </div>
+            <div class="animate_right vm/2">
+              <h4 class="ej dm bj dj">
+                <span class="xf fj si sb xe gh hh wa sa">Новое</span> Поддержка студентов из сел
+              </h4>
+              <h2 class="h cj ej dm ri jr xa">
+                Комплексная
+                <span class="pb h ik jk kk pk nk sk im before:-ud-z-1">поддержка</span>
+              </h2>
+              <p>Мы предоставляем особую поддержку студентам из сельской местности для обеспечения равных возможностей.</p>
+      
+              <div class="ia qb ee qe">
+                <div class="tc yb af hf nf pl sl qb ee ge">
+                  <p class="ej dm aj ti">01</p>
+                </div>
+                <div class="uc/4">
+                  <h5 class="ej dm ti ya">Финансовая помощь</h5>
+                  <p>Специальные стипендии и гранты для студентов из сел.</p>
+                </div>
+              </div>
+              <div class="ia qb ee qe">
+                <div class="tc yb af hf nf pl sl qb ee ge">
+                  <p class="ej dm aj ti">02</p>
+                </div>
+                <div class="uc/4">
+                  <h5 class="ej dm ti ya">Жилье и транспорт</h5>
+                  <p>Гарантированное общежитие и льготные варианты проезда.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ===== About End ===== -->
+    
+      <!-- ===== About Two Start ===== -->
+      <section>
+        <div class="ba od _g nn 2xl:ud-px-0 ve">
+          <div class="qb ee te wo">
+            <div class="animate_left vm/2">
+              <h4 class="ej dm bj dj">Интегрированный технопарк</h4>
+              <h2 class="h cj ej dm ri jr xa">
+                От аудитории к
+                <span class="pb h ik jk kk pk nk tk im before:-ud-z-1">реальному бизнесу</span>
+              </h2>
+              <p>Наш бизнес-инкубатор на территории кампуса предоставляет ресурсы, менторскую поддержку и возможности финансирования для превращения студенческих идей в успешные бизнес-проекты.</p>
+      
+              <a href="#" class="qb ee je ej dm ia">
+                Посмотреть стартапы
+                <img class="nl" src="images/icon-arrow-light.svg" alt="Стрелка">
+                <img class="ub ml" src="images/icon-arrow-dark.svg" alt="Стрелка">
+              </a>
+            </div>
+            <div class="animate_right ub sm vm/2">
+              <img src="images/about-light-02.png" alt="О технопарке" class="nl">
+              <img src="images/about-dark-02.png" alt="О технопарке" class="ub ml">
+            </div>
+          </div>
+        </div>
+      </section>
+
+    
+      <section class="vh uh qp h" x-data="{ featuresTab: 'tabOne' }">
+        <div class="ba md _g nn 2xl:ud-px-0">
+          <div class="g i -ud-z-1">
+            <img class="nl" src="images/shape-dotted-light.svg" alt="Точечная форма">
+            <img class="ub ml" src="images/shape-dotted-dark.svg" alt="Точечная форма">
+          </div>
+      
+          <!-- Tab Menues Start -->
+          <div class="animate_top hf nf pl sl sj hm uf bf qb de en fn ge yo eq _a wp">
+            <div class="h yd rc wm kf wk jn nf pl qb ee pe ch qq xg rq" :class="{ 'active pk ok uk ik mk kk qk rk': featuresTab === 'tabOne' }" @click.prevent="featuresTab = 'tabOne'">
+              <div class="vc zb af hf nf pl sl qb ee ge">
+                <p class="ej dm bj ui">1</p>
+              </div>
+              <div class="io xm/5">
+                <h5 class="ej dm vi lr bj">Гибкие программы</h5>
+              </div>
+            </div>
+            <div class="h yd rc wm kf wk jn nf pl qb ee pe ch qq xg rq" :class="{ 'active pk ok uk ik mk kk qk rk': featuresTab === 'tabTwo' }" @click.prevent="featuresTab = 'tabTwo'">
+              <div class="vc zb af hf nf pl sl qb ee ge">
+                <p class="ej dm bj ui">2</p>
+              </div>
+              <div class="io xm/5">
+                <h5 class="ej dm vi lr bj">Разнообразное сообщество</h5>
+              </div>
+            </div>
+            <div class="h yd rc wm kf wk jn nf pl qb ee pe ch qq xg rq" :class="{ 'active pk ok uk ik mk kk qk rk': featuresTab === 'tabThree' }" @click.prevent="featuresTab = 'tabThree'">
+              <div class="vc zb af hf nf pl sl qb ee ge">
+                <p class="ej dm bj ui">3</p>
+              </div>
+              <div class="io xm/5">
+                <h5 class="ej dm vi lr bj">Международные стандарты</h5>
+              </div>
+            </div>
+          </div>
+          <!-- Tab Menues End -->
+      
+          <!-- Tab Content Start -->
+          <div class="animate_top ba pd">
+            <div x-show="featuresTab === 'tabOne'">
+              <div class="qb ee te _o">
+                <div class="vm/2">
+                  <h2 class="ej dm ri mr cj fa">Индивидуальные траектории обучения</h2>
+                  <p class="ga">Мы предлагаем гибкие академические варианты, включая академические отпуска и персонализированные учебные планы.</p>
+                  <p class="xc/12">Студенты могут адаптировать обучение под личные и профессиональные цели, с возможностью ускоренных или расширенных программ.</p>
+                </div>
+                <div class="ub sm vm/2">
+                  <img src="images/features-light-01.png" alt="Особенности" class="nl">
+                  <img src="images/features-dark-01.png" alt="Особенности" class="ub ml">
+                </div>
+              </div>
+            </div>
+      
+            <div x-show="featuresTab === 'tabTwo'">
+              <div class="qb ee te _o">
+                <div class="vm/2">
+                  <h2 class="ej dm ri mr cj fa">Инклюзивная среда</h2>
+                  <p class="ga">Мы ценим разнообразие и приветствуем студентов из всех слоев общества.</p>
+                  <p class="xc/12">Наше сообщество включает студентов из городских и сельских регионов Казахстана, создавая богатый культурный обмен и возможности для нетворкинга.</p>
+                </div>
+                <div class="ub sm vm/2">
+                  <img src="images/features-light-01.png" alt="Особенности" class="nl">
+                  <img src="images/features-dark-01.png" alt="Особенности" class="ub ml">
+                </div>
+              </div>
+            </div>
+      
+            <div x-show="featuresTab === 'tabThree'">
+              <div class="qb ee te _o">
+                <div class="vm/2">
+                  <h2 class="ej dm ri mr cj fa">Образование мирового уровня</h2>
+                  <p class="ga">Мы сочетаем международные лучшие практики с потребностями локального рынка.</p>
+                  <p class="xc/12">Наша учебная программа разрабатывается с участием ведущих университетов и отраслевых экспертов, обеспечивая актуальное и передовое образование.</p>
+                </div>
+                <div class="ub sm vm/2">
+                  <img src="images/features-light-01.png" alt="Особенности" class="nl">
+                  <img src="images/features-dark-01.png" alt="Особенности" class="ub ml">
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Tab Content End -->
+        </div>
+      </section>
+      <!-- ===== Features Tab End ===== -->
+      
+      <section class="zg fp _g nn 2xl:ud-px-0">
+        <div class="ba md ih tq h w ye fg gg hg xl yl _l sl cm">
+          <img src="images/shape-04.png" alt="Человек" class="g -ud-top-25 -ud-left-15 wn -ud-z-1">
+          <img src="images/shape-05.png" alt="Графика" class="g k j -ud-z-1">
+          <img src="images/shape-dotted-light-02.svg" alt="Точечный узор" class="g i l -ud-z-1 nl">
+          <img src="images/shape-dotted-dark-02.svg" alt="Точечный узор" class="g i l -ud-z-1 ub ml">
+      
+          <div class="animate_top ba mi ym/5 ho/3 zp/2 ab yn _g on">
+            <h2 class="cj ej dm ri nr sa">Доверяют международные компании</h2>
+            <p class="jo/12 ba">Наш университет сотрудничает с ведущими мировыми компаниями в сфере технологий и бизнеса.</p>
+          </div>
+      
+          <div class="qb de ge te ap">
+            <div class="animate_top mi">
+              <h3 class="cj ej dm ri nr cb">100%</h3>
+              <p class="oi up">Практическая программа</p>
+            </div>
+            <div class="animate_top mi">
+              <h3 class="cj ej dm ri nr cb">172К</h3>
+              <p class="oi up">Площадь кампуса</p>
+            </div>
+            <div class="animate_top mi">
+              <h3 class="cj ej dm ri nr cb">24/7</h3>
+              <p class="oi up">Доступ в лаборатории</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ===== CTA End ===== -->
+    
+      <section class="uh pp cr ve">
+        <div class="ba od _g nn pq h">
+          <div class="g -ud-bottom-7.5 -ud-z-1">
+            <img src="images/shape-dotted-light.svg" alt="Точечный узор" class="nl">
+            <img src="images/shape-dotted-light.svg" alt="Точечный узор" class="ub ml">
+          </div>
+          <div class="qb de en fn te gq">
+            <div class="animate_left _m/5 ko/2">
+              <h4 class="ej dm bj dj">ОСТАЛИСЬ ВОПРОСЫ?</h4>
+              <h2 class="h cj ej dm ri jr xa">
+                Частые вопросы
+                <span class="pb h ik jk kk pk nk tk im before:-ud-z-1">по поступлению</span>
+              </h2>
+      
+              <a href="#" class="qb ee je ej dm eb">
+                Связаться с нами
+                <img class="nl" src="images/icon-arrow-light.svg" alt="Стрелка">
+                <img class="ub ml" src="images/icon-arrow-dark.svg" alt="Стрелка">
+              </a>
+            </div>
+      
+            <div class="animate_right xm/5 ko/2">
+              <div class="uf sl ol pl mj ye" x-data="{selected:0}">
+                <div class="qb be kf nf pl">
+                  <h4 @click="selected !== 0 ? selected = 0 : selected = null" class="yd qb he ee bj ui ej dm mh hp xg ip">
+                    Какие программы вы предлагаете?
+                    <img src="images/icon-plus-light.svg" alt="плюс" class="nl" :class="selected == 0 ? 'ub' : 'ob'">
+                    <img src="images/icon-minus-light.svg" alt="минус" class="nl" :class="selected == 0 ? 'ob' : 'ub'">
+                  </h4>
+                  <p x-show="selected == 0" class="mh hp xg ip lf nf pl">
+                    Мы специализируемся на предпринимательстве, искусственном интеллекте, робототехнике и информационных технологиях с практико-ориентированными учебными программами.
+                  </p>
+                </div>
+                <div class="qb be kf nf pl">
+                  <h4 @click="selected !== 1 ? selected = 1 : selected = null" class="yd qb he ee bj ui ej dm mh hp xg ip">
+                    Есть ли общежитие?
+                    <img src="images/icon-plus-light.svg" alt="плюс" class="nl" :class="selected == 1 ? 'ub' : 'ob'">
+                    <img src="images/icon-minus-light.svg" alt="минус" class="nl" :class="selected == 1 ? 'ob' : 'ub'">
+                  </h4>
+                  <p x-show="selected == 1" class="mh hp xg ip lf nf pl">
+                    Да, мы предоставляем гарантированное место в общежитии на кампусе, с приоритетом для студентов из сельской местности. Наши общежития оснащены современными удобствами и учебными зонами.
+                  </p>
+                </div>
+                <div class="qb be">
+                  <h4 @click="selected !== 2 ? selected = 2 : selected = null" :class="{'yd qb he ee bj ui ej dm mh hp xg ip': true, 'ef': selected != 2}">
+                    Как работает бизнес-инкубатор?
+                    <img src="images/icon-plus-light.svg" alt="плюс" class="nl" :class="selected == 2 ? 'ub' : 'ob'">
+                    <img src="images/icon-minus-light.svg" alt="минус" class="nl" :class="selected == 2 ? 'ob' : 'ub'">
+                  </h4>
+                  <p x-show="selected == 2" :class="{'mh hp xg ip lf nf pl': true, 'ef': selected == 2}">
+                    Студенты могут подавать свои бизнес-идеи в наш технопарк, получая менторскую поддержку, ресурсы и потенциальное финансирование для развития своих проектов.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="ba nd _g nn pq">
+          <!-- Начало секции заголовка -->
+          <div class="animate_top mi ba" x-data="{ 
+              sectionTitle: `ОТЗЫВЫ`, 
+              sectionSubtitle: `Что говорят наши студенты`, 
+              sectionTitlePara: `Узнайте о реальном опыте обучения в Extra University из первых уст. Наши студенты и партнеры делятся своими впечатлениями.`
+            }">
+            <div class="eg sl ol pl pb xe oh hh sa">
+              <h4 x-text="sectionTitle" class="bj yi ej dm"></h4>
+            </div>
+            <h2 x-text="sectionSubtitle" class="cj ri nr ej dm ym/5 zp/2 ba sa"></h2>
+            <p class="ba ym/5 mo/5 aq" x-text="sectionTitlePara"></p>
+          </div>
+          <!-- Конец секции заголовка -->
+        </div>
+        
+
+          </div>
+          <!-- Section Title End -->
+        </div>
+        <div class="animate_top ba od _g nn pq ha vp">
+          <!-- Slider main container -->
+          <div class="swiper testimonial-01 xh">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+              <!-- Slides -->
+              <div class="swiper-slide">
+                <div class="uf ye uj gm sl ol pl tg zh">
+                  <div class="qb he kf nf pl ai ea">
+                    <div>
+                      <h4 class="ej dm ui fb">Айсулу Танатарова</h4>
+                      <p>Руководитель исследований ИИ в QazTech</p>
+                    </div>
+                    <img class="" src="images/user-01.png" alt="Айсулу Танатарова">
+                  </div>
+                  <p>«Программа по робототехнике в Extra University дала мне практический опыт работы с передовыми технологиями. Уже через год после выпуска я возглавляла команду, разрабатывающую ИИ-решения для сельского хозяйства.»</p>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="uf ye uj gm sl ol pl tg zh">
+                  <div class="qb he kf nf pl ai ea">
+                    <div>
+                      <h4 class="ej dm ui fb">Бахытжан Омаров</h4>
+                      <p>Основатель NomadStartups</p>
+                    </div>
+                    <img class="" src="images/user-02.png" alt="Бахытжан Омаров">
+                  </div>
+                  <p>«Инкубатор университета помог превратить мой студенческий проект в успешный бизнес. Наставничество от профессионалов отрасли было неоценимым — мы уже привлекли $500 000 инвестиций.»</p>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="uf ye uj gm sl ol pl tg zh">
+                  <div class="qb he kf nf pl ai ea">
+                    <div>
+                      <h4 class="ej dm ui fb">Дана Есенова</h4>
+                      <p>Стипендиатка для студентов из сельской местности</p>
+                    </div>
+                    <img class="" src="images/user-01.png" alt="Дана Есенова">
+                  </div>
+                  <p>«Я из маленькой деревни и не могла даже представить, что смогу учиться в таком продвинутом университете. Помощь с жильём и академическое наставничество стали решающими для моего успеха.»</p>
+                </div>
+              </div>
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+        
+      </section>
+      <!-- ===== Testimonials End ===== -->
+
+      <!-- ===== Pricing Table Start ===== -->
+          </div>
+          <!-- Section Title End -->
+        </div>
+
+
+      </section>
+      <!-- ===== Pricing Table End ===== -->
+
+      <!-- ===== Contact Start ===== -->
+      <section id="support" class="_g nn 2xl:ud-px-0">
+        <div class="ba md h fi tp gr dh kp yq ve">
+          <div class="g -ud-z-1 ye l i rc dc/3 fg gg hg xl zl am"></div>
+          <div class="g -ud-z-1 o l rc ec/3">
+            <img src="images/shape-dotted-light.svg" alt="Точечный узор" class="nl">
+            <img src="images/shape-dotted-dark.svg" alt="Точечный узор" class="ub ml">
+          </div>
+      
+          <div class="qb de en ce dn te jq gn">
+            <div class="animate_top rc xm/5 mo/4 mj ye uf tl ol pl ug nq">
+              <h2 class="ej dm ri mr aj _a">Связаться с приёмной комиссией</h2>
+      
+              <form action="https://formbold.com/s/unique_form_id" method="POST">
+                <div class="qb be po so le bp ea">
+                  <input type="text" placeholder="ФИО" class="rc ko/2 bg kf nf pl jl gl qm il rm gi">
+                  <input type="email" placeholder="Электронная почта" class="rc ko/2 bg kf nf pl jl gl qm il rm gi">
+                </div>
+      
+                <div class="qb be po so le bp ab">
+                  <select class="rc ko/2 bg kf nf pl jl gl qm il rm gi">
+                    <option value="">Выберите программу</option>
+                    <option value="ai">Искусственный интеллект</option>
+                    <option value="robotics">Инженерия робототехники</option>
+                    <option value="business">Предпринимательство</option>
+                    <option value="it">Информационные технологии</option>
+                  </select>
+                  <input type="text" placeholder="Номер телефона" class="rc ko/2 bg kf nf pl jl gl qm il rm gi">
+                </div>
+      
+                <div class="qb ib">
+                  <textarea placeholder="Ваши вопросы о приёме, программах или стипендиях" rows="4" class="rc bg kf nf pl jl gl qm il rm"></textarea>
+                </div>
+      
+                <div class="qb de cq re kq">
+                  <div>
+                    <label for="supportCheckbox" class="rd qb yd zd bl">
+                      <div class="h">
+                        <input type="checkbox" id="supportCheckbox" class="c">
+                        <div class="box wa kb qb fc bd ee ge cf hf nf pl">
+                          <span class="lj">
+                            <svg width="11" height="8" viewBox="0 0 11 8" fill="none" class="og">
+                              <path d="M10.0915 0.951972L10.0867 0.946075L10.0813 0.940568C9.90076 0.753564 9.61034 0.753146 9.42927 0.939309L4.16201 6.22962L1.58507 3.63469C1.40401 3.44841 1.11351 3.44879 0.932892 3.63584C0.755703 3.81933 0.755703 4.10875 0.932892 4.29224L0.932878 4.29225L0.934851 4.29424L3.58046 6.95832C3.73676 7.11955 3.94983 7.2 4.1473 7.2C4.36196 7.2 4.55963 7.11773 4.71406 6.9584L10.0468 1.60234C10.2436 1.4199 10.2421 1.1339 10.0915 0.951972ZM4.2327 6.30081L4.2317 6.2998C4.23206 6.30015 4.23237 6.30049 4.23269 6.30082L4.2327 6.30081Z" stroke-width="0.4"></path>
+                            </svg>
+                          </span>
+                        </div>
+                      </div>
+                      Я согласен(на) получать информацию о программах Extra University
+                    </label>
+                  </div>
+      
+                  <button class="sb ee je tf xk hk ek rl bj fj xe xg yg">
+                    Отправить заявку
+                    <svg class="ig" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M10.4767 6.16664L6.00668 1.69664L7.18501 0.518311L13.6667 6.99998L7.18501 13.4816L6.00668 12.3033L10.4767 7.83331H0.333344V6.16664H10.4767Z" fill=""></path>
+                    </svg>
+                  </button>
+                </div>
+              </form>
+            </div>
+      
+            <div class="animate_top rc _m/5 no ln hr">
+              <h2 class="ej dm ri mr aj ab">Посетите наш кампус</h2>
+      
+              <div class="fa 5">
+                <h4 class="bj ej dm ui sa">Местоположение</h4>
+                <p>Посёлок Дәулет, 100 км от Алматы, Казахстан</p>
+              </div>
+              <div class="fa 5">
+                <h4 class="bj ej dm ui sa">Офис приёмной комиссии</h4>
+                <p><a href="mailto:admissions@extra-university.edu.kz"><span class="__cf_email__">admissions@x.uni.kz</span></a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- ===== Footer Start ===== -->
+      <footer class="uf sl lf nf pl">
+        <div class="ba md _g nn 2xl:ud-px-0">
+          <!-- Footer Top -->
+          <div class="zg ep">
+            <div class="qb de so te cp">
+              <div class="animate_top yc/2 ko/4">
+                <a href="index.html">
+                  <img src="images/logo-light.svg" alt="Логотип Extra University" class="nl">
+                  <img src="images/logo-dark.svg" alt="Логотип Extra University" class="ub ml">
+                </a>
+      
+                <p class="ta na">Extra University – там, где идеи становятся стартапами. Сочетание мировых стандартов с практическим обучением в бизнесе и технологиях.</p>
+      
+                <p class="dj tracking-[5px] yi fb">КОНТАКТЫ</p>
+                <a href="mailto:admissions@x.uni.kz" class="ej dm bj zi">admissions@x.uni.kz</a>
+              </div>
+      
+              <div class="rc ho/3 _p/12 qb be dn gn te hn">
+                <div class="animate_top">
+                  <h4 class="bj ej dm _i pa">Быстрые ссылки</h4>
+      
+                  <ul>
+                    <li><a href="#" class="pb bl la">Главная</a></li>
+                    <li><a href="#" class="pb bl la">Программы</a></li>
+                    <li><a href="#" class="pb bl la">Приём</a></li>
+                    <li><a href="#" class="pb bl la">Стипендии</a></li>
+                  </ul>
+                </div>
+      
+                <div class="animate_top">
+                  <h4 class="bj ej dm _i pa">Мы</h4>
+      
+                  <ul>
+                    <li><a href="#" class="pb bl la">О нас</a></li>
+                    <li><a href="#" class="pb bl la">Новости и события</a></li>
+                    <li><a href="#" class="pb bl la">Центр карьеры</a></li>
+                    <li><a href="#" class="pb bl la">Контакты</a></li>
+                  </ul>
+                </div>
+      
+                <div class="animate_top">
+                  <h4 class="bj ej dm _i pa">Рассылка</h4>
+                  <p class="sa cd">Подпишитесь, чтобы получать обновления о программах и событиях</p>
+      
+                  <form action="#">
+                    <div class="h">
+                      <input type="text" placeholder="Электронная почта" class="rc tl hf nf pl wj gm xe hl fl pm yg xg">
+                      <button class="g j pg">
+                        <svg class="mg bm al" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <g clip-path="url(#clip0_48_1487)">
+                            <path d="M3.1175 1.17318L18.5025 9.63484C18.5678 9.67081 18.6223 9.72365 18.6602 9.78786C18.6982 9.85206 18.7182 9.92527 18.7182 9.99984C18.7182 10.0744 18.6982 10.1476 18.6602 10.2118C18.6223 10.276 18.5678 10.3289 18.5025 10.3648L3.1175 18.8265C3.05406 18.8614 2.98262 18.8792 2.91023 18.8781C2.83783 18.8769 2.76698 18.857 2.70465 18.8201C2.64232 18.7833 2.59066 18.7308 2.55478 18.6679C2.51889 18.6051 2.50001 18.5339 2.5 18.4615V1.53818C2.50001 1.46577 2.51889 1.39462 2.55478 1.33174C2.59066 1.26885 2.64232 1.2164 2.70465 1.17956C2.76698 1.14272 2.83783 1.12275 2.91023 1.12163C2.98262 1.12051 3.05406 1.13828 3.1175 1.17318ZM4.16667 10.8332V16.3473L15.7083 9.99984L4.16667 3.65234V9.16651H8.33333V10.8332H4.16667Z" fill=""></path>
+                          </g>
+                          <defs>
+                            <clipPath id="clip0_48_1487">
+                              <rect width="20" height="20" fill="white"></rect>
+                            </clipPath>
+                          </defs>
+                        </svg>
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+      
+          <!-- Footer Bottom -->
+          <div class="lf nf pl qb de be po ee ge so qe cp ph">
+            <div class="animate_top">
+              <ul class="qb ee te">
+                <li><a href="#" class="bl">Қазақша</a></li>
+                <li><a href="#" class="bl">Политика конфиденциальности</a></li>
+                <li><a href="#" class="bl">Для инвесторов</a></li>
+              </ul>
+            </div>
+      
+            <div class="animate_top">
+              <p>© 2025 Extra University. Все права защищены</p>
+            </div>
+          </div>
+        </div>
+      </footer>
+      
+
+
+    </div>
+    <!-- Footer Bottom -->
+  </div>
+</footer>
+
+    <!-- ===== Footer End ===== -->
+
+    <!-- ====== Back To Top Start ===== -->
+    <button class="ub ee ge jd nc ze sj wf zk f u v _" @click="window.scrollTo({top: 0, behavior: 'smooth'})" @scroll.window="scrollTop = (window.pageYOffset > 50) ? true : false" :class="{ 'rb' : scrollTop }">
+  <svg class="ig bd fc" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+    <path d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z"></path>
+  </svg>
+</button>
+
+    <!-- ====== Back To Top End ===== -->
+  <script data-cfasync="false" src="js/email-decode.min.js"></script><script defer="" src="js/bundle.js"></script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'932c36aaed639fe4',t:'MTc0NTA2MzczMy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
+
+</body></html>
